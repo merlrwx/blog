@@ -1,0 +1,84 @@
+/* would like to ignore ./src/pages/og-image/[slug].png.ts */
+@import "tailwindcss";
+/* config for tailwindcss-typography plugin */
+@config "../../tailwind.config.ts";
+
+/* use a selector-based strategy for dark mode */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* you could refactor below to use light-dark(), depending on your target audience */
+@theme {
+	--color-global-bg: #ffffff;
+	--color-global-text: #3c3836;
+	--color-link: #458588;
+	--color-accent: #8ec07c;
+	--color-accent-2: #d79921;
+	--color-quote: #cc241d;
+}
+
+@layer base {
+	html {
+		color-scheme: light dark;
+		accent-color: var(--color-accent);
+		scrollbar-gutter: stable;
+
+		&[data-theme="light"] {
+			color-scheme: light;
+		}
+
+		&[data-theme="dark"] {
+			color-scheme: dark;
+			--color-global-bg: #1c1c1c;
+			--color-global-text: #f0f0f0;
+			--color-link: #458588;
+			--color-accent: #8ec07c;
+			--color-accent-2: #d79921;
+			--color-quote: #cc241d;
+		}
+	}
+
+	:target {
+		scroll-margin-block: 5ex;
+	}
+
+	@view-transition {
+		navigation: auto;
+	}
+
+	/* Astro image responsive styles, modified from -> https://docs.astro.build/en/guides/images/#responsive-image-styles */
+	:where([data-astro-image]) {
+		object-fit: var(--fit);
+		object-position: var(--pos);
+	}
+	[data-astro-image="full-width"] {
+		width: 100%;
+	}
+	[data-astro-image="constrained"] {
+		max-width: 100%;
+	}
+}
+
+@layer components {
+	@import "./components/admonition.css";
+	@import "./components/github-card.css";
+
+	.cactus-link {
+		@apply hover:decoration-link underline underline-offset-2 hover:decoration-2;
+	}
+
+	.title {
+		@apply text-accent-2 text-2xl font-semibold;
+	}
+}
+
+@utility prose {
+	--tw-prose-body: var(--color-global-text);
+	--tw-prose-bold: var(--color-global-text);
+	--tw-prose-bullets: var(--color-global-text);
+	--tw-prose-code: var(--color-global-text);
+	--tw-prose-headings: var(--color-accent-2);
+	--tw-prose-hr: 0.5px dashed #666;
+	--tw-prose-links: var(--color-global-text);
+	--tw-prose-quotes: var(--color-quote);
+	--tw-prose-th-borders: #666;
+}
