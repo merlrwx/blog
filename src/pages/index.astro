@@ -26,9 +26,12 @@ const latestNotes = allNotes
 ---
 
 <PageLayout meta={{ title: "Home" }}>
-	<section>
-		<h1 class="title mb-12">Hello World!</h1>
-		<p class="mb-4">Welcome to merl.one.</p>
+	<section class="pb-14">
+		<h1 class="title text-global-text mb-4 text-4xl leading-tight sm:text-5xl">Jason Standen</h1>
+		<div class="bg-quote mb-7 h-1 w-14"></div>
+		<p class="max-w-2xl text-lg leading-8 text-muted">
+			Writing about software, systems, homelab work, and the engineering notes worth keeping.
+		</p>
 		<SocialList />
 	</section>
 	{
@@ -45,13 +48,13 @@ const latestNotes = allNotes
 			</section>
 		)
 	}
-	<section class="mt-16">
-		<h2 class="title text-accent mb-6 text-xl"><a href="/posts/">Posts</a></h2>
-		<ul class="space-y-4" role="list">
+	<section class="border-t border-border pt-12">
+		<h2 class="title text-quote mb-8 text-2xl"><a href="/posts/">Recent Posts</a></h2>
+		<ul class="space-y-8" role="list">
 			{
 				latestPosts.map((p) => (
-					<li class="grid gap-1 sm:grid-cols-[auto_1fr]">
-						<PostPreview post={p} />
+					<li class="border-b border-border pb-8">
+						<PostPreview as="h3" post={p} withDesc />
 					</li>
 				))
 			}

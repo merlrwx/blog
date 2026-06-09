@@ -1,14 +1,14 @@
 ---
-import { menuLinks } from "@/site.config";
+import { menuLinks, siteConfig } from "@/site.config";
 
 const year = new Date().getFullYear();
 ---
 
 <footer
-	class="mt-auto flex w-full flex-col items-center justify-center gap-y-2 pt-20 pb-4 text-center align-top font-semibold text-gray-600 sm:flex-row sm:justify-between sm:text-xs dark:text-gray-400"
+	class="text-muted mx-auto mt-auto flex w-full max-w-3xl flex-col items-center justify-center gap-y-2 px-4 pt-20 pb-4 text-center align-top text-sm font-semibold sm:flex-row sm:justify-between sm:px-8 sm:text-xs"
 >
 	<div class="me-0 sm:me-4">
-		&copy; {year} merl. All rights reserved.
+		&copy; {year} {siteConfig.author}. All rights reserved.
 	</div>
 	<nav
 		aria-labelledby="footer_links"

@@ -3,17 +3,46 @@
 /* config for tailwindcss-typography plugin */
 @config "../../tailwind.config.ts";
 
+@font-face {
+	font-family: "JetBrains Mono";
+	src: url("../assets/jetbrains-mono-regular.otf") format("opentype");
+	font-display: swap;
+	font-style: normal;
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: "JetBrains Mono";
+	src: url("../assets/jetbrains-mono-semibold.otf") format("opentype");
+	font-display: swap;
+	font-style: normal;
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: "JetBrains Mono";
+	src: url("../assets/jetbrains-mono-bold.otf") format("opentype");
+	font-display: swap;
+	font-style: normal;
+	font-weight: 700;
+}
+
 /* use a selector-based strategy for dark mode */
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
-/* you could refactor below to use light-dark(), depending on your target audience */
 @theme {
-	--color-global-bg: #ffffff;
+	--font-mono:
+		"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+		monospace;
+	--color-global-bg: #fbf1c7;
 	--color-global-text: #3c3836;
-	--color-link: #458588;
-	--color-accent: #8ec07c;
-	--color-accent-2: #d79921;
-	--color-quote: #cc241d;
+	--color-surface: #f2e5bc;
+	--color-muted: #7c6f64;
+	--color-border: #d5c4a1;
+	--color-link: #076678;
+	--color-accent: #98971a;
+	--color-accent-2: #b57614;
+	--color-quote: #9d0006;
 }
 
 @layer base {
@@ -24,17 +53,46 @@
 
 		&[data-theme="light"] {
 			color-scheme: light;
+			--color-global-bg: #fbf1c7;
+			--color-global-text: #3c3836;
+			--color-surface: #f2e5bc;
+			--color-muted: #7c6f64;
+			--color-border: #d5c4a1;
+			--color-link: #076678;
+			--color-accent: #98971a;
+			--color-accent-2: #b57614;
+			--color-quote: #9d0006;
 		}
 
 		&[data-theme="dark"] {
 			color-scheme: dark;
-			--color-global-bg: #1c1c1c;
-			--color-global-text: #f0f0f0;
-			--color-link: #458588;
-			--color-accent: #8ec07c;
-			--color-accent-2: #d79921;
-			--color-quote: #cc241d;
+			--color-global-bg: #282828;
+			--color-global-text: #ebdbb2;
+			--color-surface: #32302f;
+			--color-muted: #a89984;
+			--color-border: #504945;
+			--color-link: #83a598;
+			--color-accent: #b8bb26;
+			--color-accent-2: #fabd2f;
+			--color-quote: #fb4934;
 		}
+	}
+
+	body {
+		font-feature-settings:
+			"calt" 1,
+			"liga" 1;
+		text-rendering: optimizeLegibility;
+	}
+
+	::selection {
+		background: color-mix(in srgb, var(--color-accent-2) 35%, transparent);
+		color: var(--color-global-text);
+	}
+
+	:focus-visible {
+		outline: 2px solid var(--color-accent-2);
+		outline-offset: 3px;
 	}
 
 	:target {
@@ -63,7 +121,7 @@
 	@import "./components/github-card.css";
 
 	.cactus-link {
-		@apply hover:decoration-link underline underline-offset-2 hover:decoration-2;
+		@apply decoration-border hover:decoration-link underline underline-offset-4 hover:decoration-2;
 	}
 
 	.title {

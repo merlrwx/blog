@@ -20,13 +20,11 @@ const {
 	<head>
 		<BaseHead articleDate={articleDate} description={description} ogImage={ogImage} title={title} />
 	</head>
-	<body
-		class="bg-global-bg text-global-text mx-auto flex min-h-screen max-w-3xl flex-col px-4 pt-16 font-mono text-sm font-normal antialiased sm:px-8"
-	>
+	<body class="bg-global-bg text-global-text flex min-h-screen flex-col font-mono text-[15px] leading-7 font-normal antialiased">
 		<ThemeProvider />
 		<SkipLink />
 		<Header />
-		<main id="main">
+		<main class="mx-auto w-full max-w-3xl grow px-4 py-12 sm:px-8 sm:py-16" id="main">
 			<slot />
 		</main>
 		<Footer />

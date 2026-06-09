@@ -3,7 +3,7 @@ import type { SiteConfig } from "@/types";
 
 export const siteConfig: SiteConfig = {
 	// Used as both a meta property (src/components/BaseHead.astro L:31 + L:49) & the generated satori png (src/pages/og-image/[slug].png.ts)
-	author: "merl",
+	author: "Jason Standen",
 	// Date.prototype.toLocaleDateString() parameters, found in src/utils/date.ts.
 	date: {
 		locale: "en-AU",
@@ -14,7 +14,7 @@ export const siteConfig: SiteConfig = {
 		},
 	},
 	// Used as the default description meta property and webmanifest description
-	description: "merl's blog",
+	description: "Jason Standen's blog",
 	// HTML lang property, found in src/layouts/Base.astro L:18 & astro.config.ts L:48
 	lang: "en-GB",
 	// Meta property, found in src/components/BaseHead.astro L:42
@@ -25,7 +25,7 @@ export const siteConfig: SiteConfig = {
 		- The link value found in src/components/layout/Header.astro L:35
 		- In the footer found in src/components/layout/Footer.astro L:12
 	*/
-	title: "merl blog",
+	title: "Jason Standen",
 	// ! Please remember to replace the following site property with your own domain, used in astro.config.ts
 	url: "https://merl.one",
 };
@@ -33,20 +33,16 @@ export const siteConfig: SiteConfig = {
 // Used to generate links in both the Header & Footer.
 export const menuLinks: { path: string; title: string }[] = [
 	{
-		path: "/",
-		title: "Home",
-	},
-	{
 		path: "/about/",
 		title: "About",
 	},
 	{
-		path: "/posts/",
-		title: "Blog",
+		path: "/tags/",
+		title: "Tags",
 	},
 	{
-		path: "/notes/",
-		title: "Notes",
+		path: "/index/",
+		title: "Index",
 	},
 ];
 
@@ -55,7 +51,7 @@ export const expressiveCodeOptions: AstroExpressiveCodeOptions = {
 	styleOverrides: {
 		borderRadius: "4px",
 		codeFontFamily:
-			'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
+			'"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace',
 		codeFontSize: "0.875rem",
 		codeLineHeight: "1.7142857rem",
 		codePaddingInline: "1rem",
@@ -76,6 +72,6 @@ export const expressiveCodeOptions: AstroExpressiveCodeOptions = {
 		return `[data-theme="${theme.name}"]`;
 	},
 	// One dark, one light theme => https://expressive-code.com/guides/themes/#available-themes
-	themes: ["dracula", "github-light"],
+	themes: ["gruvbox-dark-hard", "gruvbox-light-hard"],
 	useThemedScrollbars: false,
 };
