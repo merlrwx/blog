@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Jason Standen blog social preview">
+	<defs>
+		<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+			<stop offset="0%" stop-color="#181818" />
+			<stop offset="100%" stop-color="#101010" />
+		</linearGradient>
+		<linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+			<stop offset="0%" stop-color="#fabd2f" />
+			<stop offset="100%" stop-color="#b8bb26" />
+		</linearGradient>
+	</defs>
+
+	<rect width="1200" height="630" fill="url(#bg)" />
+	<rect x="56" y="56" width="1088" height="518" rx="32" fill="none" stroke="#2b2b2b" stroke-width="2" />
+
+	<circle cx="1030" cy="122" r="6" fill="#fabd2f" opacity="0.9" />
+	<circle cx="1060" cy="122" r="6" fill="#b8bb26" opacity="0.9" />
+	<circle cx="1090" cy="122" r="6" fill="#83a598" opacity="0.9" />
+
+	<g transform="translate(118 136)">
+		<rect width="164" height="164" rx="28" fill="#282828" />
+		<path
+			d="M63 48L101 82L63 116"
+			fill="none"
+			stroke="#fabd2f"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="16"
+		/>
+		<path
+			d="M109 116H131"
+			fill="none"
+			stroke="#b8bb26"
+			stroke-linecap="round"
+			stroke-width="16"
+		/>
+	</g>
+
+	<text x="332" y="246" fill="#c9cacc" font-family="JetBrains Mono, ui-monospace, monospace" font-size="30" font-weight="700" letter-spacing="2">
+		JASON STANDEN
+	</text>
+	<text x="332" y="326" fill="#f4f4f5" font-family="JetBrains Mono, ui-monospace, monospace" font-size="46" font-weight="700">
+		Writing about software
+	</text>
+	<text x="332" y="384" fill="#f4f4f5" font-family="JetBrains Mono, ui-monospace, monospace" font-size="46" font-weight="700">
+		systems, homelab, and notes.
+	</text>
+	<text x="332" y="492" fill="#9ca3af" font-family="JetBrains Mono, ui-monospace, monospace" font-size="28" font-weight="400">
+		blog.merl.one
+	</text>
+
+	<rect x="332" y="526" width="152" height="8" rx="4" fill="url(#accent)" />
+</svg>
